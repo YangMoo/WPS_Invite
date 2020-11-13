@@ -26,12 +26,12 @@ s = requests.session()
 sidList = []
 token = ''
 if token=='':
-    str = input("sidlist:")
+    sidstr = input("sidlist:")
     token = input("token:")
     try:
-        sidList = eval(str)
+        sidList = eval(sidstr)
     except:
-        print('invalid list',str)
+        print('invalid list',sidstr)
     
 
 def wps_invite(invite_userid: int):
