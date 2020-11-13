@@ -41,13 +41,11 @@ jobs:
           s='${{ secrets.SIDLIST }}'
           t='${{ secrets.TOKEN }}'
           
+          echo ${s}
           sidList='['
           token=''
           for u in ${s[*]}          
           do
-            if [${#s} <> 1]; then
-              s=${s}','
-            fi
             s=${s}${u}
           done
           
