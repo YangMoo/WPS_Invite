@@ -46,9 +46,9 @@ jobs:
           for u in ${s[*]}          
           do
             if [${#s} <> 1]; then
-              s=${s}',
+              s=${s}','
             fi
-            s=${s}','${u}
+            s=${s}${u}
           done
           
           s=${s}']'
