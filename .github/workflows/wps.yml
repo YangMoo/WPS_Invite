@@ -37,11 +37,14 @@ jobs:
           
       # Runs a set of commands using the runners shell
       - name: Checkin
+        env: 
+          sidList: ${{ secrets.SIDLIST }}
+          token:  ${{ secrets.SIDLIST }}
         run: |
           s='${{ secrets.SIDLIST }}'
           t='${{ secrets.TOKEN }}'
           
-          echo ${s}
+          echo "sidlist:$sidList token:$token"
           sidList='['
           token=''
           for u in ${s[*]}          
