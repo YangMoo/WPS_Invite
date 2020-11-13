@@ -51,4 +51,4 @@ jobs:
           sleep 1m
           done
          
-          python3 wpsInvite.py `${sidlist} ${token}`
+          python3 wpsInvite.py "`echo ${sidlist}`" "`echo ${token}`"
