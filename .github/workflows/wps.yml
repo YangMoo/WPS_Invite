@@ -41,24 +41,7 @@ jobs:
           sidList: ${{ secrets.SIDLIST }}
           token:  ${{ secrets.SIDLIST }}
         run: |
-          s='${{ secrets.SIDLIST }}'
-          t='${{ secrets.TOKEN }}'
           
-          echo "sidlist:$sidList token:$token"
-          sidList='['
-          token=''
-          for u in ${s[*]}          
-          do
-            s=${s}${u}
-          done
-          
-          s=${s}']'
-          for p in ${t[*]}
-          do
-          token=${p}
-          done
-          
-
           random_time=$(($RANDOM % 5))
           echo "等待 ${random_time} 分钟后开始发送邀请"
           for((i=1;i<=${random_time};i++));  
@@ -66,6 +49,5 @@ jobs:
           echo "倒计时:剩余 $[${random_time}-$i] 分钟"
           sleep 1m
           done
-          echo ${sidList}
-          echo ${token}
-          python3 wpsInvite.py ${sidList} ${token}
+          
+          python3 wpsInvite.py "$sidList" "$token"
