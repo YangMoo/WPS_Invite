@@ -1,2 +1,2 @@
-# WPS_Sign_Invite
-WPS会员打卡发送邀请
+# WPS_Invite
+发送WPS会员打卡邀请
