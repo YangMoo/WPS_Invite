@@ -83,4 +83,4 @@ if __name__ == "__main__":
         token = argv[2]
         main()
     else:
-        print("invalid argv:", len(argv)，argv)
+        print("invalid argv:", len(argv), argv)
