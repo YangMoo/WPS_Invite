@@ -40,6 +40,9 @@ jobs:
         run: |
           sidList='${{ secrets.SIDLIST }}'
           token='${{ secrets.TOKEN }}'
+          
+          sidList()
+          token()
 
           random_time=$(($RANDOM % 5))
           echo "等待 ${random_time} 分钟后开始发送邀请"
