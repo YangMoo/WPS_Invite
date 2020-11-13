@@ -27,8 +27,9 @@ sidList = []
 token = ''
 if token=='':
     sidstr = input("sidlist:")
-    token = input("token:")
-    print(token[0:32],token[32:])
+    tostr = input("token:")
+    token =str(tostr)
+    print('token ',tostr,' - ',token,,' - ',token[0:32],' - ',token[32:])
     try:
         sidList = eval(sidstr)
     except:
