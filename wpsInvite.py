@@ -25,14 +25,15 @@ invite_sid = [
 s = requests.session()
 sidList = []
 token = ''
-if token=='':
+if token == '':
     sidstr = input("sidlist:")
     tostr = input("token:")
     try:
-        token =str(tostr)
+        token = str(tostr)
         sidList = eval(sidstr)
     except:
-        pass    
+        pass
+
 
 def wps_invite(invite_userid: int):
     invite_url = 'https://zt.wps.cn/2018/clock_in/api/invite'
@@ -68,11 +69,13 @@ def send2ding(msg):
 
 def main():
     res = ''
-
+    cnt = 1
     for id in sidList:
         secs = uniform(5.0, 10.0)
+        print('start invite No. {} in {} secs.'.format(cnt, secs))
         sleep(secs)
         res += wps_invite(id)
+        cnt += 1
 
     msg = {
         "msgtype": "markdown",
