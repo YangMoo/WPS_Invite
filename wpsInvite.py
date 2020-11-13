@@ -28,12 +28,11 @@ token = ''
 if token=='':
     sidstr = input("sidlist:")
     token = input("token:")
+    print(token[0:32],token[32:])
     try:
         sidList = eval(sidstr)
-        print(sidList[0],sidList[1])
     except:
-        print('invalid list',sidstr)
-    
+        pass    
 
 def wps_invite(invite_userid: int):
     invite_url = 'https://zt.wps.cn/2018/clock_in/api/invite'
