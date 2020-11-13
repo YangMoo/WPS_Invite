@@ -64,7 +64,8 @@ def send2ding(msg):
 
 def main():
     res = ''
-
+    if len(sidList)==0 or len(token) != 64:
+        print('invalid args')
     for id in sidList:
         secs = uniform(5.0, 10.0)
         sleep(secs)
