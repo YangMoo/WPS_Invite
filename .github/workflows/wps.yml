@@ -50,4 +50,7 @@ jobs:
           sleep 1m
           done
           
-          python3 wpsInvite.py "$sidList" "$token"
+          python3 wpsInvite.py <<EOF
+          ${sidList}
+          ${token}
+          EOF
