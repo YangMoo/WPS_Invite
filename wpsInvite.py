@@ -78,6 +78,7 @@ def main():
 
 
 if __name__ == "__main__":
+    print("invalid argv:",argv)
     if len(argv) == 3:
         sidList = eval(argv[1])
         token = argv[2]
