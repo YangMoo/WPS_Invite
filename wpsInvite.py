@@ -30,6 +30,7 @@ if token=='':
     token = input("token:")
     try:
         sidList = eval(sidstr)
+        print(sidList[0],sidList[1])
     except:
         print('invalid list',sidstr)
     
