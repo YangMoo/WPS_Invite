@@ -41,7 +41,7 @@ jobs:
           sidList='${{ secrets.SIDLIST }}'
           token='${{ secrets.TOKEN }}'
 
-          random_time=$(($RANDOM % 10))
+          random_time=$(($RANDOM % 5))
           echo "等待 ${random_time} 分钟后开始发送邀请"
           for((i=1;i<=${random_time};i++));  
           do
@@ -49,7 +49,4 @@ jobs:
           sleep 1m
           done
          
-          python3 wpsInvite.py <<EOF
-          ${sidlist}
-          ${token}
-          EOF
+          python3 wpsInvite.py ${sidlist} ${token}
