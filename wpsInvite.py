@@ -29,7 +29,9 @@ if token=='':
     sidstr = input("sidlist:")
     tostr = input("token:")
     token =str(tostr)
-    print('token ',tostr,' - ',token,' - ',token[0:32],' - ',token[32:])
+    print('\ntoken len',len(tostr),' ori:',tostr,' str:',token,'  0-32:',token[0:32],' ',token[32:])
+    print('\ntoken upper:',token.upper())
+    print('\ntoken upper:',list(token))
     try:
         sidList = eval(sidstr)
     except:
