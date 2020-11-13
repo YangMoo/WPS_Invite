@@ -25,7 +25,14 @@ invite_sid = [
 s = requests.session()
 sidList = []
 token = ''
-
+if token=='':
+    s = input("sidlist:")
+    token = input("token:")
+    try:
+        sidList = eval(s)
+    except:
+        print('invalid list',s)
+    
 
 def wps_invite(invite_userid: int):
     invite_url = 'https://zt.wps.cn/2018/clock_in/api/invite'
@@ -78,10 +85,4 @@ def main():
 
 
 if __name__ == "__main__":
-    print("invalid argv:",argv)
-    if len(argv) == 3:
-        sidList = eval(argv[1])
-        token = argv[2]
-        main()
-    else:
-        print("invalid argv:", len(argv), argv)
+    main()
