@@ -1,4 +1,5 @@
 import requests
+from sys import argv
 from json import dumps
 from datetime import datetime
 from time import sleep
@@ -24,10 +25,6 @@ invite_sid = [
 s = requests.session()
 sidList = []
 token = ''
-if len(sidList) == 0:
-    idstr = input("sid:")
-    token = input('token:')
-    sidList = eval(idstr)
 
 
 def wps_invite(invite_userid: int):
@@ -64,8 +61,7 @@ def send2ding(msg):
 
 def main():
     res = ''
-    if len(sidList)==0 or len(token) != 64:
-        print('invalid args')
+
     for id in sidList:
         secs = uniform(5.0, 10.0)
         sleep(secs)
@@ -82,4 +78,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    if len(argv) == 3:
+        sidList = eval(argv[1])
+        token = argv[2]
+        main()
+    else:
+        print("invalid argv:", len(argv))
