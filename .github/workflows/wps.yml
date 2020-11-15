@@ -12,7 +12,7 @@ on:
   watch:
     types: started
   schedule:
-    - cron: 0 2,14 * * *
+    - cron: 0 0 * * *
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -42,7 +42,7 @@ jobs:
           token:  ${{ secrets.TOKEN }}
         run: |
           
-          random_time=$(($RANDOM % 45))
+          random_time=$(($RANDOM % 25))
           echo "等待 ${random_time} 分钟后开始发送邀请"
           for((i=1;i<=${random_time};i++));  
           do
