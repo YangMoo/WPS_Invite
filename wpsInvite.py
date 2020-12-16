@@ -44,11 +44,11 @@ def wps_invite(invite_userid: int):
         }
         secs = uniform(0.5, 1.2)
         sleep(secs)
-        r = s.post(invite_url, headers=headers, data={
-                   'invite_userid': invite_userid})
-        print("ID={}, 状态码: {}, 请求信息{}".format(
-            str(index+1).zfill(2), r.status_code, r.text))
         try:
+            r = s.post(invite_url, headers=headers, data={
+                       'invite_userid': invite_userid})
+            print("ID={}, 状态码: {}, 请求信息{}".format(
+                str(index+1).zfill(2), r.status_code, r.text))
             res = r.json()['result']
             if res == 'ok':
                 cnt += 1
